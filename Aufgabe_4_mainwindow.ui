@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1101</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LCD-Anzeige</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="2">
+     <widget class="QPushButton" name="oktalButton">
+      <property name="text">
+       <string>Oktal</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="5">
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="dezimalButton">
+      <property name="text">
+       <string>Dezimal</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="5">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>68</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Beenden</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="binaerButton">
+      <property name="text">
+       <string>Binär</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="5">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber">
+          <property name="digitCount">
+           <number>9</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber_2">
+          <property name="digitCount">
+           <number>9</number>
+          </property>
+          <property name="mode">
+           <enum>QLCDNumber::Hex</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber_3">
+          <property name="digitCount">
+           <number>9</number>
+          </property>
+          <property name="mode">
+           <enum>QLCDNumber::Oct</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber_4">
+          <property name="digitCount">
+           <number>9</number>
+          </property>
+          <property name="mode">
+           <enum>QLCDNumber::Bin</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QSpinBox" name="spinBox">
+      <property name="maximum">
+       <number>500</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>180</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="5">
+     <widget class="QDial" name="dial">
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="notchesVisible">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="hexadezimalButton">
+      <property name="text">
+       <string>Hexadezimal</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>horizontalSlider</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>521</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>108</x>
+     <y>561</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>47</x>
+     <y>521</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_2</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>921</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_3</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>921</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_4</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>921</x>
+     <y>512</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1090</x>
+     <y>596</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1091</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>571</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_2</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1091</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>620</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_3</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1091</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>620</x>
+     <y>325</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_4</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1091</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>620</x>
+     <y>453</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>571</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1091</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>46</x>
+     <y>530</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>497</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dezimalButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setDecMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>46</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>497</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>binaerButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setBinMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>497</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>oktalButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setOctMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>497</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hexadezimalButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setHexMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>289</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>497</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
