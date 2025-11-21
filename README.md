@@ -1,2 +1,2 @@
-# qt_LCD_Anzeige.ui
+# QT LCD Anzeige.ui
 Das Arbeiten mit QT-Designer
